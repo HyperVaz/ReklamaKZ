@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Название компании</title>
+    <meta name="description" content="О компании - лидеры в сфере наружной рекламы с многолетним опытом">
+    
+    <!-- Подключение шрифта Museo -->
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Фон с анимацией -->
+    <div class='ripple-bg' data-colors='["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]'></div>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <button class="nav-toggle">☰</button>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="current"><a href="about.html">О нас</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="price.html">Цены</a></li>
+                    <li><a href="portfolio.html">Наши работы</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-content">
+                <div>
+                    <img src="assets/img/logo.svg" alt="Логотип компании" class="logo">
+                </div>
+                
+                <div class="contact-info">
+                    <p>г. Москва, Ленинский проспект, дом 0</p>
+                    <p>+7 (000) 000-00-00</p>
+                    <button class="btn">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main>
+        <!-- Хлебные крошки -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Главная</a><span class="breadcrumbs-separator">/</span><span class="breadcrumbs-current">О нас</span>
+            </div>
+        </section>
+
+        <!-- Заголовок страницы -->
+        <section class="page-title">
+            <div class="container">
+                <h1 class="fade-in">О нас</h1>
+            </div>
+        </section>
+
+        <!-- Контент страницы -->
+        <section class="page-content">
+            <div class="container">
+                <div class="content fade-in">
+                    <p>Мы лидеры в сфере наружной рекламы с многолетним опытом и непревзойденной репутацией на рынке. Мы специализируемся на разработке стратегий и воплощении уникальных рекламных кампаний, которые помогают нашим клиентам привлечь внимание и усилить присутствие на рынке.</p>
+
+                    <p>Наша миссия</p>
+
+                    <p>Сделать ваш бренд видимым и незабываемым. Мы верим, что креативность и инновации в комбинации с глубоким пониманием нужд наших клиентов позволяют создавать рекламу, которая действительно работает.</p>
+
+                    <p><strong>Почему мы?</strong></p>
+
+                    <ul>
+                        <li><strong>Профессионализм:</strong> Наша команда состоит из экспертов, которые всегда готовы предложить свежий взгляд и нестандартные решения.</li>
+                        <li><strong>Индивидуальный подход:</strong> Каждому клиенту мы предлагаем индивидуальные решения, учитывающие специфику его бизнеса.</li>
+                        <li><strong>Инновации: </strong>Мы используем передовые технологии и последние тренды в наружной рекламе.</li>
+                    </ul>
+
+                    <p>Откройте новые горизонты для вашего бизнеса вместе с нами.</p>
+                    
+                    <p>Мы рады стать вашим надежным партнером на пути к успеху. Свяжитесь с нами, чтобы узнать больше!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты и график работы -->
+        <section class="contact-info-section">
+            <div class="container">
+                <h2 class="fade-in">Контакты</h2>
+                <div class="contact-details">
+                    <div class="fade-in">
+                        <h3>Контактная информация</h3>
+                        <p>г. Москва, Ленинский проспект, дом 0</p>
+                        <p>+7 (000) 000-00-00</p>
+                        <p>+7 (000) 000-00-01</p>
+                        <p>mail@company.ru</p>
+                    </div>
+                    <div class="fade-in">
+                        <h3>График работы</h3>
+                        <p>Пн-Пт с 9:00 до 18:00</p>
+                        <p>Суббота с 10:00 до 17:00</p>
+                        <p>Воскресенье - выходной</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2024 - 2025 Название компании</p>
+        </div>
+    </footer>
+
+    <script>
+        // Инициализация риппл-эффекта фона
+        document.addEventListener('DOMContentLoaded', function() {
+            initRippleEffect();
+            initMobileMenu();
+            initFadeIn();
+        });
+
+        function initRippleEffect() {
+            const rippleBg = document.querySelector('.ripple-bg');
+            if (!rippleBg) return;
+
+            const colors = JSON.parse(rippleBg.getAttribute('data-colors') || '["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]');
+            
+            function createRipple() {
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple';
+                
+                const size = Math.random() * 100 + 50;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                ripple.style.width = `${size}px`;
+                ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}%`;
+                ripple.style.top = `${y}%`;
+                ripple.style.backgroundColor = color;
+                
+                rippleBg.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+            }
+            
+            // Создаем несколько рипплов при загрузке
+            for (let i = 0; i < 5; i++) {
+                setTimeout(createRipple, i * 200);
+            }
+            
+            // Периодическое создание новых рипплов
+            setInterval(createRipple, 1000);
+        }
+
+        // Инициализация мобильного меню
+        function initMobileMenu() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.main-nav ul');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Закрытие меню при клике на пункт (для мобильных)
+                const navLinks = document.querySelectorAll('.main-nav a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            navMenu.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        }
+
+        // Инициализация анимации появления элементов
+        function initFadeIn() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Сначала скрываем все элементы
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            
+            // Запускаем при загрузке
+            fadeInOnScroll();
+            
+            // И при прокрутке
+            window.addEventListener('scroll', fadeInOnScroll);
+        }
+    </script>
+</body>
+</html>

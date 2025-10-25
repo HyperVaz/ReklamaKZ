@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прайс-лист - Название компании</title>
+    <meta name="description" content="Прайс-лист на услуги по изготовлению наружной рекламы">
+    
+    <!-- Подключение шрифта Museo -->
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Фон с анимацией -->
+    <div class='ripple-bg' data-colors='["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]'></div>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-to-top" id="scrollToTopBtn">Наверх</button>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <button class="nav-toggle">☰</button>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li class="current"><a href="price.html">Цены</a></li>
+                    <li><a href="foto.html">Наши работы</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-content">
+                <div>
+                    <img src="thumb/2/AMPfsiu2OweKwTHuj0qArg/640r480/d/tpl25_logo_no6_nostrok.svg" alt="Логотип компании" class="logo">
+                    <h1>Название компании</h1>
+                    <p>Рекламное агентство</p>
+                </div>
+                
+                <div class="contact-info">
+                    <p>г. Москва, Ленинский проспект, дом 0</p>
+                    <p>+7 (000) 000-00-00</p>
+                    <p>mail@company.ru</p>
+                    <button class="btn">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main>
+        <!-- Хлебные крошки -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Главная</a><span class="breadcrumbs-separator">/</span><span class="breadcrumbs-current">Цены</span>
+            </div>
+        </section>
+
+        <!-- Заголовок страницы -->
+        <section class="page-title">
+            <div class="container">
+                <h1 class="fade-in">Прайс-лист</h1>
+            </div>
+        </section>
+
+        <!-- Контент страницы -->
+        <section class="page-content">
+            <div class="container">
+                <div class="content fade-in">
+                    <p>Мы предлагаем конкурентные цены на все виды услуг по изготовлению наружной рекламы. Каждый проект рассчитывается индивидуально с учетом ваших потребностей и специфики.</p>
+                    
+                    <table class="price-table fade-in">
+                        <thead>
+                            <tr>
+                                <th>Товар или услуга</th>
+                                <th>Описание</th>
+                                <th>Цена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Товар или услуга А</strong></td>
+                                <td>Описание товара или услуги</td>
+                                <td>
+                                    <span class="current-price">530 р.</span>
+                                    <div class="old-price">630 р.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Товар или услуга Б</strong></td>
+                                <td>Описание товара или услуги</td>
+                                <td>
+                                    <span class="current-price">399 р.</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Товар или услуга В</strong></td>
+                                <td>Описание товара или услуги</td>
+                                <td>
+                                    <span class="current-price">499 р.</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>Для получения точного расчета стоимости вашего проекта свяжитесь с нашими менеджерами. Мы подготовим индивидуальное коммерческое предложение с учетом всех ваших требований.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты и график работы -->
+        <section class="contact-info-section">
+            <div class="container">
+                <h2 class="fade-in">Контакты</h2>
+                <div class="contact-details">
+                    <div class="fade-in">
+                        <h3>Контактная информация</h3>
+                        <p>г. Москва, Ленинский проспект, дом 0</p>
+                        <p>+7 (000) 000-00-00</p>
+                        <p>+7 (000) 000-00-01</p>
+                        <p>mail@company.ru</p>
+                    </div>
+                    <div class="fade-in">
+                        <h3>График работы</h3>
+                        <p>Пн-Пт с 9:00 до 18:00</p>
+                        <p>Суббота с 10:00 до 17:00</p>
+                        <p>Воскресенье - выходной</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2024 - 2025 Название компании</p>
+        </div>
+    </footer>
+
+    <script>
+        // Инициализация риппл-эффекта фона
+        document.addEventListener('DOMContentLoaded', function() {
+            initRippleEffect();
+            initMobileMenu();
+            initFadeIn();
+            initScrollToTop();
+        });
+
+        function initRippleEffect() {
+            const rippleBg = document.querySelector('.ripple-bg');
+            if (!rippleBg) return;
+
+            const colors = JSON.parse(rippleBg.getAttribute('data-colors') || '["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]');
+            
+            function createRipple() {
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple';
+                
+                const size = Math.random() * 100 + 50;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                ripple.style.width = `${size}px`;
+                ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}%`;
+                ripple.style.top = `${y}%`;
+                ripple.style.backgroundColor = color;
+                
+                rippleBg.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+            }
+            
+            // Создаем несколько рипплов при загрузке
+            for (let i = 0; i < 5; i++) {
+                setTimeout(createRipple, i * 200);
+            }
+            
+            // Периодическое создание новых рипплов
+            setInterval(createRipple, 1000);
+        }
+
+        // Инициализация мобильного меню
+        function initMobileMenu() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.main-nav ul');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Закрытие меню при клике на пункт (для мобильных)
+                const navLinks = document.querySelectorAll('.main-nav a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            navMenu.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        }
+
+        // Инициализация анимации появления элементов
+        function initFadeIn() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Сначала скрываем все элементы
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            
+            // Запускаем при загрузке
+            fadeInOnScroll();
+            
+            // И при прокрутке
+            window.addEventListener('scroll', fadeInOnScroll);
+        }
+
+        // Инициализация кнопки "Наверх"
+        function initScrollToTop() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            // Показываем/скрываем кнопку при прокрутке
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
+            // Прокрутка наверх при клике
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+</html>
+    

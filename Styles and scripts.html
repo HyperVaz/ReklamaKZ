@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Контакты</title>
+    <meta name="description" content="Контакты рекламного агентства">
+    
+    <!-- Подключение шрифта Museo -->
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+    <!-- Фон с анимацией -->
+    <div class='ripple-bg' data-colors='["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]'></div>
+
+    <!-- Основной контент -->
+
+    <script>
+        // Инициализация риппл-эффекта фона
+        document.addEventListener('DOMContentLoaded', function() {
+            initRippleEffect();
+            initMobileMenu();
+        });
+
+        function initRippleEffect() {
+            const rippleBg = document.querySelector('.ripple-bg');
+            if (!rippleBg) return;
+
+            const colors = JSON.parse(rippleBg.getAttribute('data-colors') || '["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]');
+            
+            function createRipple() {
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple';
+                
+                const size = Math.random() * 100 + 50;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                ripple.style.width = `${size}px`;
+                ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}%`;
+                ripple.style.top = `${y}%`;
+                ripple.style.backgroundColor = color;
+                
+                rippleBg.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+            }
+            
+            // Создаем несколько рипплов при загрузке
+            for (let i = 0; i < 5; i++) {
+                setTimeout(createRipple, i * 200);
+            }
+            
+            // Периодическое создание новых рипплов
+            setInterval(createRipple, 1000);
+        }
+
+        // Инициализация мобильного меню
+        function initMobileMenu() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.main-nav ul');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Закрытие меню при клике на пункт (для мобильных)
+                const navLinks = document.querySelectorAll('.main-nav a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            navMenu.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        }
+    </script>
+</body>
+</html>

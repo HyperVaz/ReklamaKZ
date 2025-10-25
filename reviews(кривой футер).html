@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Отзывы - Рекламное агентство</title>
+    <meta name="description" content="Отзывы наших клиентов">
+    
+    <!-- Подключение шрифта Museo -->
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+    <!-- Фон с анимацией -->
+    <div class='ripple-bg' data-colors='["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]'></div>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-to-top" id="scrollToTopBtn">Наверх</button>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <nav class="main-nav" aria-label="Основная навигация">
+                <button class="nav-toggle">☰</button>
+                <ul>
+                    <li><a href='index.html'>Главная</a></li>
+                    <li><a href='about.html'>О нас</a></li>
+                    <li class="has-submenu">
+                        <a href='services.html'>Услуги</a>
+                        <ul class="submenu">
+                            <li><a href='vyveski.html'>Вывески</a></li>
+                            <li><a href='flagshtoki.html'>Флагштоки</a></li>
+                            <li><a href='reklamnye-konstrukcii.html'>Рекламные конструкции</a></li>
+                            <li><a href='tablichki-navigacii.html'>Таблички навигации</a></li>
+                            <li><a href='art-ob-ekty.html'>Арт-объекты</a></li>
+                            <li><a href='pechat-na-bannere.html'>Печать на баннере</a></li>
+                            <li><a href='proektnye-uslugi.html'>Проектные услуги</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='price.html'>Цены</a></li>
+                    <li class="current"><a href='reviews.html' aria-current="page">Отзывы</a></li>
+                    <li><a href='foto.html'>Наши работы</a></li>
+                    <li><a href='contacts.html'>Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-content">
+                <div>
+                    <img src="thumb/2/AMPfsiu2OweKwTHuj0qArg/640r480/d/tpl25_logo_no6_nostrok.svg" alt="Логотип компании" class="logo">
+                    <h1>Название компании</h1>
+                    <p>Рекламное агентство</p>
+                </div>
+                
+                <div class="contact-info">
+                    <p>г. Москва, Ленинский проспект, дом 0</p>
+                    <p>+7 (000) 000-00-00</p>
+                    <p>mail@company.ru</p>
+                    <button class="btn">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main>
+        <!-- Хлебные крошки -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Главная</a><span class="breadcrumbs-separator">/</span><span class="breadcrumbs-current">Отзывы</span>
+            </div>
+        </section>
+
+        <!-- Заголовок страницы -->
+        <section class="page-title">
+            <div class="container">
+                <h1 class="fade-in">Отзывы</h1>
+            </div>
+        </section>
+
+        <!-- Секция отзывов -->
+        <section class="reviews-section" aria-labelledby="reviews-heading">
+            <div class="container">
+                <h2 id="reviews-heading" class="visually-hidden">Отзывы клиентов</h2>
+                
+                <div class="reviews-grid">
+                    <article class="review-card fade-in">
+                        <blockquote class="review-text">
+                            Хотел бы отметить дружелюбный подход и лояльность к клиентам, а это всегда помогает сделать процесс взаимодействия приятным и продуктивным. Здорово, что вы искренне интересуетесь нашими потребностями и ожиданиями. Сотрудничество стало для меня приятным опытом.
+                        </blockquote>
+                        <footer class="review-author">Кирилл Яковлев</footer>
+                    </article>
+
+                    <article class="review-card fade-in">
+                        <blockquote class="review-text">
+                            Обращаюсь сюда уже не первый раз, и могу с уверенностью сказать, что вы делаете свою работу великолепно! Ценю высокий профессионализм, ответственность и чуткое отношение к клиенту. Спасибо за отличную работу!
+                        </blockquote>
+                        <footer class="review-author">Александра Сомова</footer>
+                    </article>
+
+                    <article class="review-card fade-in">
+                        <blockquote class="review-text">
+                            Очень благодарен за теплый и профессиональный подход, который я получил. Спасибо за ответственность, открытость и готовность помочь. Всегда буду рекомендовать вас друзьям и знакомым.
+                        </blockquote>
+                        <footer class="review-author">Александр Ягудин</footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <!-- Копирайт (начинается футер) -->
+            <div class="fade-in">
+                <p>Copyright &copy; 2024 - 2025 Название компании</p>
+            </div>
+            
+            <!-- Контакты -->
+            <section class="contact-info-section" aria-labelledby="contacts-heading">
+                <h2 id="contacts-heading" class="fade-in">Контакты</h2>
+                <div class="contact-details">
+                    <div class="fade-in">
+                        <address>
+                            <p>г. Москва, Ленинский проспект, дом, строение, номер кабинета</p>
+                            <p>Телефон: <a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
+                            <p>Телефон: <a href="tel:+70000000001">+7 (000) 000-00-01</a></p>
+                            <p>Email: <a href="mailto:login@domain.ru">login@domain.ru</a></p>
+                        </address>
+                    </div>
+                    <div class="fade-in">
+                        <h3>График работы</h3>
+                        <p>Пн-Пт с 9:00 до 18:00<br>
+                        Суббота с 10:00 до 17:00<br>
+                        Воскресенье - выходной</p>
+                    </div>
+                    <div class="fade-in">
+                        <h3>Социальные сети</h3>
+                        <div class="social-links">
+                            <a href='https://telegram.org/' aria-label="Telegram">
+                                <svg width="24" height="24" viewBox="0 0 400 400" aria-hidden="true">
+                                    <path d="M285.793 115.378l-179.283 67.8c-9.805 2.829-9.492 12.502-2.24 14.828l44.921 14.004 17.188 52.632c2.089 5.761 3.798 7.931 7.365 7.979 3.75.052 5.186-1.316 9.081-4.755 4.56-4.277 11.505-11.009 22.48-21.667l46.727 34.482c8.598 4.737 14.806 2.283 16.947-7.976l29.295-144.732c3.14-12.575-4.255-16.325-12.481-12.595zm-129.552 93.414l102.129-63.998c5.03-3.371 6.607.39 4.336 2.988l-84.759 76.151-4.349 38.008-17.357-53.149z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+
+    <script>
+        // Инициализация риппл-эффекта фона
+        document.addEventListener('DOMContentLoaded', function() {
+            initRippleEffect();
+            initMobileMenu();
+            initFadeIn();
+            initScrollToTop();
+        });
+
+        function initRippleEffect() {
+            const rippleBg = document.querySelector('.ripple-bg');
+            if (!rippleBg) return;
+
+            const colors = JSON.parse(rippleBg.getAttribute('data-colors') || '["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]');
+            
+            function createRipple() {
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple';
+                
+                const size = Math.random() * 100 + 50;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                ripple.style.width = `${size}px`;
+                ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}%`;
+                ripple.style.top = `${y}%`;
+                ripple.style.backgroundColor = color;
+                
+                rippleBg.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+            }
+            
+            // Создаем несколько рипплов при загрузке
+            for (let i = 0; i < 5; i++) {
+                setTimeout(createRipple, i * 200);
+            }
+            
+            // Периодическое создание новых рипплов
+            setInterval(createRipple, 1000);
+        }
+
+        // Инициализация мобильного меню
+        function initMobileMenu() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.main-nav ul');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Закрытие меню при клике на пункт (для мобильных)
+                const navLinks = document.querySelectorAll('.main-nav a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            navMenu.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        }
+
+        // Инициализация анимации появления элементов
+        function initFadeIn() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Сначала скрываем все элементы
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            
+            // Запускаем при загрузке
+            fadeInOnScroll();
+            
+            // И при прокрутке
+            window.addEventListener('scroll', fadeInOnScroll);
+        }
+
+        // Инициализация кнопки "Наверх"
+        function initScrollToTop() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Показываем/скрываем кнопку при прокрутке
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
+            // Прокрутка наверх при клике
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+</html>
