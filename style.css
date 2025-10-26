@@ -70,7 +70,6 @@ footer {
 
 @keyframes particle-animation {
     0% { opacity: 1; }
-    100% { opacity: 0; transform: translate(var(--x), var(--y)); }
 }
 
 /* Основной контент */
@@ -1073,10 +1072,8 @@ footer a:hover {
         text-align: left;
     }
 }
-
 /*slider and modal*/
 
-<style>
  .slider-container {
      position: relative;
      width: 100%;
@@ -1227,8 +1224,6 @@ footer a:hover {
 
 .service-card:hover .service-image img {
     transform: scale(1.1);
-    cursor: pointer;
-
 }
 
 .service-card h3 {
@@ -1241,6 +1236,7 @@ footer a:hover {
 }
 .service-card h3:hover{
     color: #6a0dad;
+    cursor: pointer;
 }
 /* Адаптивность */
 @media (max-width: 1200px) {
