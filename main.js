@@ -1,4 +1,81 @@
 // Инициализация риппл-эффекта фона
+
+const slides = document.getElementById('slides');
+let autoPlayInterval;
+
+function animateSlider() {
+    const slideWidth = document.querySelector('.slide').offsetWidth + 10;
+    slides.style.transform = `translateX(-${slideWidth * 4}px)`;
+
+    setTimeout(() => {
+        slides.style.transition = 'none';
+        slides.style.transform = 'translateX(0)';
+        setTimeout(() => {
+            slides.style.transition = 'transform 120s linear';
+            animateSlider();
+        }, 50);
+    }, 120000);
+}
+
+function moveSlider(direction) {
+    // Останавливаем авто-прокрутку при ручном управлении
+    clearInterval(autoPlayInterval);
+
+    const slideWidth = document.querySelector('.slide').offsetWidth + 10;
+    const currentTransform = getComputedStyle(slides).transform;
+    const matrix = new DOMMatrix(currentTransform);
+    const currentPosition = matrix.m41; // текущее положение X
+
+    slides.style.transition = 'transform 0.5s ease';
+    slides.style.transform = `translateX(${currentPosition - (slideWidth * direction)}px)`;
+
+    // Через 10 секунд возобновляем авто-прокрутку
+    setTimeout(() => {
+        restartAutoPlay();
+    }, 400);
+}
+
+function restartAutoPlay() {
+    clearInterval(autoPlayInterval);
+    // Перезапускаем плавную анимацию
+    const currentTransform = getComputedStyle(slides).transform;
+    const matrix = new DOMMatrix(currentTransform);
+    const currentPosition = matrix.m41;
+
+    slides.style.transition = 'transform 120s linear';
+    const targetPosition = currentPosition - (document.querySelector('.slide').offsetWidth + 10) * 4;
+    slides.style.transform = `translateX(${targetPosition}px)`;
+
+    setTimeout(() => {
+        slides.style.transition = 'none';
+        slides.style.transform = 'translateX(0)';
+        setTimeout(() => {
+            slides.style.transition = 'transform 120s linear';
+            animateSlider();
+        }, 50);
+    }, 120000 - (Math.abs(currentPosition) / (document.querySelector('.slide').offsetWidth + 10) * 30000));
+}
+
+function openModal(imagePath) {
+    const modalContent = document.getElementById('modalContent');
+    modalContent.innerHTML = `
+                <img src="${imagePath}" alt="Изображение">
+            `;
+    document.getElementById('modal').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Запускаем анимацию
+animateSlider();
+
+// Закрытие модалки по клику на фон
+document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     initRippleEffect();
     initMobileMenu();
