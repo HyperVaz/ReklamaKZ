@@ -27,7 +27,7 @@ h1, h2, h3,
 footer {
     font-family: 'MuseoCyrl', Arial, sans-serif;
     font-weight: 500;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 /* Стили для фона с риппл-эффектом */
@@ -71,7 +71,6 @@ footer {
 .main-content {
     position: relative;
     z-index: 1;
-    margin: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -81,7 +80,6 @@ footer {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 /* Навигация */
@@ -113,9 +111,8 @@ footer {
     list-style: none;
     flex-wrap: wrap;
     gap: 15px;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
     align-items: center;
+    justify-content: space-around;
 }
 
 .main-nav a {
@@ -284,11 +281,11 @@ h3 {
 /* Шапка сайта */
 header {
     background: #f8f8f8;
-    padding: 20px 0;
+    padding: 20px 0 15px 0;
     border-bottom: 1px solid #eee;
     border-radius: 0 0 15px 15px;
-    margin: 0 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 /* Логотип и контакты в шапке */
@@ -340,7 +337,7 @@ header {
 
 .contact-details p {
     margin: 0;
-    line-height: 1.3;
+    line-height: 0.9;
 }
 
 .btn {
@@ -467,7 +464,12 @@ header {
     flex: 1;
     min-width: 300px;
 }
-
+.header-hr{
+    height: 3px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border: none;
+    margin: 5px 0;
+}
 .package-image img {
     max-width: 100%;
     height: auto;
