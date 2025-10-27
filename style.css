@@ -1354,10 +1354,37 @@ footer a:hover {
     }
 }
 @media (max-width: 768px) {
+    .header {
+        position: relative;
+        min-height: 60px; /* Фиксированная высота для header */
+    }
+
     .nav-toggle {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        z-index: 1001;
+        position: absolute;
+    }
+}
+@media (max-width: 600px) {
+    .slide {
+        min-width: calc(50% - 7.5px) !important;
+    }
+}
+@media (max-width: 768px) {
+    .payment__section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .payment__section_undsec {
+        line-height: 1.2;
+    }
+
+    .payment__section_undsec-p {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 1rem;
     }
 }
