@@ -86,7 +86,14 @@ function initRippleEffect() {
     const rippleBg = document.querySelector('.ripple-bg');
     if (!rippleBg) return;
 
-    const colors = JSON.parse(rippleBg.getAttribute('data-colors') || '["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]');
+    // Проверяем наличие data-colors и парсим безопасно
+    const colorsAttr = rippleBg.getAttribute('data-colors');
+    let colors;
+    try {
+        colors = colorsAttr ? JSON.parse(colorsAttr) : ["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"];
+    } catch (e) {
+        colors = ["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"];
+    }
 
     function createRipple() {
         const ripple = document.createElement('div');
@@ -106,7 +113,9 @@ function initRippleEffect() {
         rippleBg.appendChild(ripple);
 
         setTimeout(() => {
-            ripple.remove();
+            if (ripple.parentNode === rippleBg) {
+                ripple.remove();
+            }
         }, 1000);
     }
 
@@ -120,23 +129,46 @@ function initRippleEffect() {
 }
 
 // Инициализация мобильного меню
+// Инициализация мобильного меню
 function initMobileMenu() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.main-nav ul');
 
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Предотвращаем всплытие
             navMenu.classList.toggle('active');
+
+            // Меняем иконку бургера на крестик при открытии
+            if (navMenu.classList.contains('active')) {
+                navToggle.innerHTML = '✕';
+            } else {
+                navToggle.innerHTML = '☰';
+            }
         });
 
-        // Закрытие меню при клике на пункт (для мобильных)
+        // Закрытие меню при клике на ссылку
         const navLinks = document.querySelectorAll('.main-nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
                     navMenu.classList.remove('active');
+                    navToggle.innerHTML = '☰';
                 }
             });
+        });
+
+        // Закрытие меню при клике вне его области
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.main-nav') && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.innerHTML = '☰';
+            }
+        });
+
+        // Предотвращаем закрытие при клике на само меню
+        navMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
         });
     }
 }

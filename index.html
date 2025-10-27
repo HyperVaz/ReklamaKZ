@@ -6,9 +6,7 @@
     <title>Название компании - Наружная реклама</title>
     <meta name="description"
           content="Профессиональное изготовление наружной рекламы: вывески, баннеры, рекламные конструкции">
-
     <!-- Подключение шрифтов -->
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
 
 </head>
@@ -22,37 +20,38 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-
-                <div class="under-logo">
-                    НАРУЖНАЯ
+                <div class="header-content-logo">
+                    <div class="under-logo">
+                        НАРУЖНАЯ
+                    </div>
+                    <hr class="header-hr">
+                    <img src="images/logo.png" alt="Логотип компании" class="logo">
                 </div>
+
                 <div class="contact-info">
                     <div class="contact-details">
-                        <p>ежедневно с 9:00 до 18:00</p>
-                        <p>+7(937) 009-07-05</p>
+                        <div class="contact-details-phone">
+                            <p>ежедневно с 9:00 до 18:00</p>
+                            <p>+7(937) 009-07-05</p>
+                        </div>
+                        <nav class="main-nav">
+                            <button class="nav-toggle">✕</button>
+<!--                            TODO: Доделать историю с крестиком а то это пиздец-->
+                            <ul>
+                                <li class="current"><a href="index.html">Главная</a></li>
+                                <li><a href="about.html">О нас</a></li>
+                                <li><a href="services.html">Услуги</a></li>
+                                <li><a href="price.html">Цены</a></li>
+                                <li><a href="portfolio.html">Наши работы</a></li>
+                                <li><a href="contacts.html">Контакты</a></li>
+                            </ul>
+                        </nav>
                     </div>
                     <a href="https://t.me/your_telegram" class="telegram-btn" target="_blank" aria-label="Telegram">
                         <img src="images/Telegram_logo.svg" alt="">
                     </a>
                 </div>
             </div>
-            <hr class="header-hr">
-            <nav class="main-nav">
-                <button class="nav-toggle">☰</button>
-                <ul>
-                    <li>
-                        <img src="images/logo.png" alt="Логотип компании" class="logo">
-                    </li>
-                    <li class="current"><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="services.html">Услуги</a></li>
-                    <!--                        TODO: Сделать раскрываемым список услуг-->
-                    <li><a href="price.html">Цены</a></li>
-                    <li><a href="portfolio.html">Наши работы</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-
-                </ul>
-            </nav>
         </div>
     </header>
 
@@ -90,8 +89,8 @@
 
                 <section class="payment__section">
                     <div class="payment__section_undsec">
-                    <h2 class="payment__section_undsec-head">Мы изготовим вывеску за 24 часа</h2>
-                    <p class="payment__section_undsec-p">От идеи до реализации с нами один шаг!</p>
+                        <h2 class="payment__section_undsec-head">Мы изготовим вывеску за 24 часа</h2>
+                        <p class="payment__section_undsec-p">От идеи до реализации с нами один шаг!</p>
                     </div>
                     <button class="btn fade-in">Рассчитать проект</button>
                 </section>
@@ -101,6 +100,9 @@
 
         <!-- Блок "Мы предлагаем" -->
         <section class="services">
+            <!--            TODO: Как будут реализована сама рекламная продукция? Например есть наружная реклама, пользователь проваливается в неё и внутри имеется условная таблица с делениями на продукцию(подкатегории) например "маленькая наружная реклама" и её прайс 500 деревянных.-->
+            <!--            В итоге у нас получается Следующая структура: категория&ndash;&gt;подкатегории&ndash;&gt;цена за подкатегорию?-->
+            <!--            Просьба будет расписать полное древо вашей продукции, чтобы я смог оценить реализацию этой работы и всё пошло хорошо, масштабируемо, расширяемо и прямо через интерфейс. и спроси ещё как мы поступим в хедере-->
             <div class="container">
                 <h2 class="fade-in services-head">Мы предлагаем</h2>
                 <div class="services-grid">
@@ -185,176 +187,175 @@
             </div>
         </section>
 
-<!--        &lt;!&ndash; Секция о компании &ndash;&gt;-->
-<!--        <section class="about">-->
-<!--            <div class="container">-->
-<!--                <h2 class="fade-in">О компании</h2>-->
-<!--                <p class="fade-in">Мы ведущая компания в сфере наружной рекламы, которая работает на рынке уже более 10-->
-<!--                    лет. Мы специализируемся на создании и установке рекламных конструкций, которые помогают брендам-->
-<!--                    эффективно взаимодействовать с их целевой аудиторией.</p>-->
-<!--                <p class="fade-in">Мы создаем уникальные и запоминающиеся рекламные концепции, которые выделяют ваш-->
-<!--                    бренд на фоне конкурентов.</p>-->
-<!--            </div>-->
-<!--        </section>-->
+        <!--        &lt;!&ndash; Секция о компании &ndash;&gt;-->
+        <!--        <section class="about">-->
+        <!--            <div class="container">-->
+        <!--                <h2 class="fade-in">О компании</h2>-->
+        <!--                <p class="fade-in">Мы ведущая компания в сфере наружной рекламы, которая работает на рынке уже более 10-->
+        <!--                    лет. Мы специализируемся на создании и установке рекламных конструкций, которые помогают брендам-->
+        <!--                    эффективно взаимодействовать с их целевой аудиторией.</p>-->
+        <!--                <p class="fade-in">Мы создаем уникальные и запоминающиеся рекламные концепции, которые выделяют ваш-->
+        <!--                    бренд на фоне конкурентов.</p>-->
+        <!--            </div>-->
+        <!--        </section>-->
 
-<!--        &lt;!&ndash; Секция опыта и гарантии &ndash;&gt;-->
-<!--        <section class="experience">-->
-<!--            <div class="container">-->
-<!--                <div class="grid">-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>10 лет</h3>-->
-<!--                        <p>опыта работы в рекламе</p>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>2 года</h3>-->
-<!--                        <p>гарантия на наши изделия</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
+        <!--        &lt;!&ndash; Секция опыта и гарантии &ndash;&gt;-->
+        <!--        <section class="experience">-->
+        <!--            <div class="container">-->
+        <!--                <div class="grid">-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>10 лет</h3>-->
+        <!--                        <p>опыта работы в рекламе</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>2 года</h3>-->
+        <!--                        <p>гарантия на наши изделия</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </section>-->
 
 
+        <!--        &lt;!&ndash; Блок "Почему мы" &ndash;&gt;-->
+        <!--        <section class="advantages">cd-->
+        <!--            <div class="container">-->
+        <!--                <h2 class="fade-in">Почему мы?</h2>-->
+        <!--                <div class="grid">-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>Собственное производство</h3>-->
+        <!--                        <p>Контроль на каждом этапе производства</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>Индивидуальные решения</h3>-->
+        <!--                        <p>Разработка кастомизированных проектов</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>Бесплатный замер</h3>-->
+        <!--                        <p>Замерщик выполнит все размеры бесплатно</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>Согласование вывесок</h3>-->
+        <!--                        <p>Оперативно согласуем установку вывесок с городскими властями</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </section>-->
 
-<!--        &lt;!&ndash; Блок "Почему мы" &ndash;&gt;-->
-<!--        <section class="advantages">cd-->
-<!--            <div class="container">-->
-<!--                <h2 class="fade-in">Почему мы?</h2>-->
-<!--                <div class="grid">-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>Собственное производство</h3>-->
-<!--                        <p>Контроль на каждом этапе производства</p>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>Индивидуальные решения</h3>-->
-<!--                        <p>Разработка кастомизированных проектов</p>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>Бесплатный замер</h3>-->
-<!--                        <p>Замерщик выполнит все размеры бесплатно</p>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>Согласование вывесок</h3>-->
-<!--                        <p>Оперативно согласуем установку вывесок с городскими властями</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
+        <!--        &lt;!&ndash; Блок "Пакетное предложение" &ndash;&gt;-->
+        <!--        <section class="package">-->
+        <!--            <div class="container">-->
+        <!--                <h2 class="fade-in">Пакетное предложение</h2>-->
+        <!--                <div class="package-content">-->
+        <!--                    <div class="package-image fade-in">-->
+        <!--                        <img src="assets/img/package.jpg" alt="Пакетное предложение">-->
+        <!--                    </div>-->
+        <!--                    <div class="package-text fade-in">-->
+        <!--                        <p>При заказе полного комплекта работ по оформлению фасада, включая проектирование, изготовление-->
+        <!--                            и установку, вы получаете 15% скидку на весь проект.</p>-->
+        <!--                        <p>Эта акция позволяет вам не только создать единый, стильный облик для вашего бизнеса, но и-->
+        <!--                            существенно сэкономить на комплексных работах</p>-->
+        <!--                        <button class="btn" style="margin-top: 20px;">Заказать по акции</button>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </section>-->
 
-<!--        &lt;!&ndash; Блок "Пакетное предложение" &ndash;&gt;-->
-<!--        <section class="package">-->
-<!--            <div class="container">-->
-<!--                <h2 class="fade-in">Пакетное предложение</h2>-->
-<!--                <div class="package-content">-->
-<!--                    <div class="package-image fade-in">-->
-<!--                        <img src="assets/img/package.jpg" alt="Пакетное предложение">-->
-<!--                    </div>-->
-<!--                    <div class="package-text fade-in">-->
-<!--                        <p>При заказе полного комплекта работ по оформлению фасада, включая проектирование, изготовление-->
-<!--                            и установку, вы получаете 15% скидку на весь проект.</p>-->
-<!--                        <p>Эта акция позволяет вам не только создать единый, стильный облик для вашего бизнеса, но и-->
-<!--                            существенно сэкономить на комплексных работах</p>-->
-<!--                        <button class="btn" style="margin-top: 20px;">Заказать по акции</button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
+        <!--        &lt;!&ndash; Блок "Наши клиенты" &ndash;&gt;-->
+        <!--        <section class="clients">-->
+        <!--            <div class="container">-->
+        <!--                <h2 class="fade-in">Наши клиенты</h2>-->
+        <!--                <div class="grid">-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>Компания «Express»</h3>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>Компания «Book Store»</h3>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>Компания «Color Lab»</h3>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <h3>Компания «Glow»</h3>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </section>-->
 
-<!--        &lt;!&ndash; Блок "Наши клиенты" &ndash;&gt;-->
-<!--        <section class="clients">-->
-<!--            <div class="container">-->
-<!--                <h2 class="fade-in">Наши клиенты</h2>-->
-<!--                <div class="grid">-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>Компания «Express»</h3>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>Компания «Book Store»</h3>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>Компания «Color Lab»</h3>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <h3>Компания «Glow»</h3>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
+        <!--        &lt;!&ndash; Блок "Благодарности" &ndash;&gt;-->
+        <!--        <section class="testimonials">-->
+        <!--            <div class="container">-->
+        <!--                <h2 class="fade-in">Благодарности</h2>-->
+        <!--                <div class="grid">-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <p>Благодарственное письмо от компании "Express"</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <p>Благодарственное письмо от компании "Book Store"</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <p>Благодарственное письмо от компании "Color Lab"</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card fade-in">-->
+        <!--                        <p>Благодарственное письмо от компании "Glow"</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </section>-->
 
-<!--        &lt;!&ndash; Блок "Благодарности" &ndash;&gt;-->
-<!--        <section class="testimonials">-->
-<!--            <div class="container">-->
-<!--                <h2 class="fade-in">Благодарности</h2>-->
-<!--                <div class="grid">-->
-<!--                    <div class="card fade-in">-->
-<!--                        <p>Благодарственное письмо от компании "Express"</p>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <p>Благодарственное письмо от компании "Book Store"</p>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <p>Благодарственное письмо от компании "Color Lab"</p>-->
-<!--                    </div>-->
-<!--                    <div class="card fade-in">-->
-<!--                        <p>Благодарственное письмо от компании "Glow"</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
+        <!--        &lt;!&ndash; Форма обратной связи &ndash;&gt;-->
+        <!--        <section class="contact-form">-->
+        <!--            <div class="container">-->
+        <!--                <h2 class="fade-in">Давайте обсудим ваш проект</h2>-->
+        <!--                <p class="fade-in">Определим точные параметры будущей конструкции, оценим стоимость и сроки-->
+        <!--                    изготовления. Также ответим на все ваши вопросы</p>-->
 
-<!--        &lt;!&ndash; Форма обратной связи &ndash;&gt;-->
-<!--        <section class="contact-form">-->
-<!--            <div class="container">-->
-<!--                <h2 class="fade-in">Давайте обсудим ваш проект</h2>-->
-<!--                <p class="fade-in">Определим точные параметры будущей конструкции, оценим стоимость и сроки-->
-<!--                    изготовления. Также ответим на все ваши вопросы</p>-->
+        <!--                <form class="fade-in">-->
+        <!--                    <div class="form-group">-->
+        <!--                        <label for="name">Имя</label>-->
+        <!--                        <input type="text" id="name">-->
+        <!--                    </div>-->
+        <!--                    <div class="form-group">-->
+        <!--                        <label for="phone">Телефон *</label>-->
+        <!--                        <input type="tel" id="phone" required>-->
+        <!--                    </div>-->
+        <!--                    <div class="form-group checkbox-group">-->
+        <!--                        <input type="checkbox" id="agree" required>-->
+        <!--                        <label for="agree">Я согласен на обработку моих персональных данных *</label>-->
+        <!--                    </div>-->
+        <!--                    <button type="submit" class="btn">Отправить</button>-->
+        <!--                </form>-->
+        <!--            </div>-->
+        <!--        </section>-->
 
-<!--                <form class="fade-in">-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="name">Имя</label>-->
-<!--                        <input type="text" id="name">-->
-<!--                    </div>-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="phone">Телефон *</label>-->
-<!--                        <input type="tel" id="phone" required>-->
-<!--                    </div>-->
-<!--                    <div class="form-group checkbox-group">-->
-<!--                        <input type="checkbox" id="agree" required>-->
-<!--                        <label for="agree">Я согласен на обработку моих персональных данных *</label>-->
-<!--                    </div>-->
-<!--                    <button type="submit" class="btn">Отправить</button>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </section>-->
+        <!--        &lt;!&ndash; Контакты и график работы &ndash;&gt;-->
+        <!--        <section class="contact-info-section">-->
+        <!--            <div class="container">-->
+        <!--                <h2 class="fade-in">Контакты</h2>-->
+        <!--                <div class="contact-details">-->
+        <!--                    <div class="fade-in">-->
+        <!--                        <h3>Контактная информация</h3>-->
+        <!--                        <p>г. Москва, Ленинский проспект, дом 0</p>-->
+        <!--                        <p>+7 (000) 000-00-00</p>-->
+        <!--                        <p>+7 (000) 000-00-01</p>-->
+        <!--                        <p>mail@company.ru</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="fade-in">-->
+        <!--                        <h3>График работы</h3>-->
+        <!--                        <p>Пн-Пт с 9:00 до 18:00</p>-->
+        <!--                        <p>Суббота с 10:00 до 17:00</p>-->
+        <!--                        <p>Воскресенье - выходной</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </section>-->
+        <!--    </main>-->
 
-<!--        &lt;!&ndash; Контакты и график работы &ndash;&gt;-->
-<!--        <section class="contact-info-section">-->
-<!--            <div class="container">-->
-<!--                <h2 class="fade-in">Контакты</h2>-->
-<!--                <div class="contact-details">-->
-<!--                    <div class="fade-in">-->
-<!--                        <h3>Контактная информация</h3>-->
-<!--                        <p>г. Москва, Ленинский проспект, дом 0</p>-->
-<!--                        <p>+7 (000) 000-00-00</p>-->
-<!--                        <p>+7 (000) 000-00-01</p>-->
-<!--                        <p>mail@company.ru</p>-->
-<!--                    </div>-->
-<!--                    <div class="fade-in">-->
-<!--                        <h3>График работы</h3>-->
-<!--                        <p>Пн-Пт с 9:00 до 18:00</p>-->
-<!--                        <p>Суббота с 10:00 до 17:00</p>-->
-<!--                        <p>Воскресенье - выходной</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
-<!--    </main>-->
-
-    <!-- Подвал сайта -->
-    <footer>
-        <div class="container">
-            <p>Copyright &copy; 2024 - 2025 Название компании</p>
-        </div>
-    </footer>
+        <!-- Подвал сайта -->
+        <footer>
+            <div class="container">
+                <p>Copyright &copy; 2024 - 2025 Название компании</p>
+            </div>
+        </footer>
 </div>
 
 <script src="main.js">

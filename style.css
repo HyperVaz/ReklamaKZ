@@ -154,6 +154,8 @@ h1 {
 .main-nav .current a {
     background-color: #ffd909;
     font-weight: bold;
+    border-radius: 55%;
+    padding: 15px;
 }
 
 .has-submenu {
@@ -203,8 +205,6 @@ h1 {
         position: absolute;
         top: 100%;
         left: 0;
-        background: white;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         z-index: 100;
     }
 
@@ -220,7 +220,6 @@ h1 {
     .main-nav a {
         display: block;
         padding: 15px;
-        border-bottom: 1px solid #eee;
     }
 
     .has-submenu .submenu {
@@ -345,6 +344,7 @@ header {
     text-decoration: none;
     transition: all 0.3s ease;
     flex-shrink: 0;
+    margin-bottom: 7.2rem;
 }
 
 .telegram-btn:hover {
@@ -492,6 +492,7 @@ header {
     background-color: rgba(128, 128, 128, 0.5);
     border: none;
     margin: 5px 0;
+    width: 396%;
 }
 .package-image img {
     max-width: 100%;
@@ -549,6 +550,7 @@ textarea {
 .contact-details > div {
     flex: 1;
     min-width: 250px;
+    margin-bottom: 4.2rem;
 }
 
 /* Контакты страница */
@@ -987,13 +989,19 @@ footer a:hover {
 .g-auth__personal-note a:hover {
     text-decoration: underline;
 }
-
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 1130px) {
     .header-content {
         flex-direction: column;
         text-align: center;
         gap: 15px;
+    }
+    .header-hr{
+        display: none;
+    }
+    .telegram-btn {
+        position: absolute;
+        right: 35%;
     }
 
     .contact-info {
@@ -1021,7 +1029,6 @@ footer a:hover {
     }
 
     header {
-        margin: 0 10px;
         border-radius: 0 0 10px 10px;
     }
 
@@ -1245,18 +1252,66 @@ footer a:hover {
         gap: 20px;
     }
 }
-
+@media (max-width: 1000px){
+    .telegram-btn{
+        right: 30%;
+    }
+}
+@media (max-width: 788px) {
+    .telegram-btn{
+        margin-bottom: 20%;
+    }
+}
 @media (max-width: 768px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
+    .header{
+        padding: 20px 0 0 0;
+    }
 
     .services-head {
         font-size: 2rem;
     }
+    .nav-toggle {
+        position: absolute;
+        top: -270px;
+        right: -350px;
+    }
 }
-
+@media (max-width: 720px) {
+    .nav-toggle {
+        right: -300px;
+    }
+    .telegram-btn{
+        right: 155px;
+    }
+}
+@media (max-width: 625px) {
+    .nav-toggle {
+        right: -250px;
+    }
+    .telegram-btn{
+        right: 85px;
+    }
+}
+@media (max-width: 485px) {
+    .nav-toggle {
+        right: -200px;
+    }
+    .telegram-btn{
+        right: 55px;
+    }
+}
+@media (max-width: 420px) {
+    .nav-toggle {
+        right: -150px;
+    }
+    .telegram-btn{
+        right: 5px;
+    }
+}
 @media (max-width: 480px) {
     .services-grid {
         grid-template-columns: 1fr;
@@ -1275,5 +1330,34 @@ footer a:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    .main-nav ul {
+        position: static;
+        display: none;
+        width: 100%;
+        margin-top: 15px;
+        border-radius: 8px;
+    }
+
+    .main-nav ul.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Убедимся, что меню видно */
+    .main-nav ul {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+@media (max-width: 768px) {
+    .nav-toggle {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1001;
     }
 }
