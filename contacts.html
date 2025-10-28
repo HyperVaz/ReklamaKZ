@@ -1,49 +1,58 @@
 <!DOCTYPE html>
-<html lang='ru'>
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Контакты</title>
-    <meta name="description" content="Контакты рекламного агентства">
-    
-    <!-- Подключение шрифта Museo -->
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название компании - Наружная реклама</title>
+    <meta name="description"
+          content="Профессиональное изготовление наружной рекламы: вывески, баннеры, рекламные конструкции">
+    <!-- Подключение шрифтов -->
+    <link rel="stylesheet" href="style.css"/>
 
 </head>
 <body>
-    <!-- Фон с анимацией -->
-    <div class='ripple-bg' data-colors='["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]'></div>
+<!-- Фон с анимацией -->
+<div class='ripple-bg' data-colors='["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]'></div>
 
-    <!-- Основной контент -->
-    <div class="main-content">
-        <div class='container'>
-            <!-- Шапка сайта -->
-            <header>
-                <nav class='main-nav'>
-                    <button class="nav-toggle" aria-label="Открыть меню">☰</button>
-                    <ul>
-                        <li><a href='index.html'>Главная</a></li>
-                        <li><a href='about.html'>О нас</a></li>
-                        <li class='has-submenu'>
-                            <a href='services.html'>Услуги</a>
-                            <ul class='submenu'>
-                                <li><a href='vyveski.html'>Вывески</a></li>
-                                <li><a href='flagshtoki.html'>Флагштоки</a></li>
-                                <li><a href='reklamnye-konstrukcii.html'>Рекламные конструкции</a></li>
-                                <li><a href='tablichki-navigacii.html'>Таблички навигации</a></li>
-                                <li><a href='art-ob-ekty.html'>Арт-объекты</a></li>
-                                <li><a href='pechat-na-bannere.html'>Печать на баннере</a></li>
-                                <li><a href='proektnye-uslugi.html'>Проектные услуги</a></li>
+<!-- Основной контент -->
+<div class="main-content">
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-content-logo">
+                    <div class="under-logo">
+                        НАРУЖНАЯ
+                    </div>
+                    <hr class="header-hr">
+                    <img src="images/logo.png" alt="Логотип компании" class="logo">
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <div class="contact-details-phone">
+                            <p>ежедневно с 9:00 до 18:00</p>
+                            <p>+7(937) 009-07-05</p>
+                        </div>
+                        <nav class="main-nav">
+                            <button class="nav-toggle">☰</button>
+                            <ul>
+                                <li class="current"><a href="index.html">Главная</a></li>
+                                <li><a href="about.html">О нас</a></li>
+                                <li><a href="services.html">Услуги</a></li>
+                                <li><a href="price.html">Цены</a></li>
+                                <li><a href="portfolio.html">Наши работы</a></li>
+                                <li><a href="contacts.html">Контакты</a></li>
                             </ul>
-                        </li>
-                        <li><a href='price.html'>Цены</a></li>
-                        <li><a href='reviews.html'>Отзывы</a></li>
-                        <li><a href='foto.html'>Наши работы</a></li>
-                        <li class='current'><a href='contacts.html'>Контакты</a></li>
-                    </ul>
-                </nav>
-            </header>
+                        </nav>
+                    </div>
+                    <a href="https://t.me/your_telegram" class="telegram-btn" target="_blank" aria-label="Telegram">
+                        <img src="images/Telegram_logo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
             <!-- Основной контент -->
             <main>
@@ -127,71 +136,6 @@
         </div>
     </div>
 
-    <script>
-        // Инициализация риппл-эффекта фона
-        document.addEventListener('DOMContentLoaded', function() {
-            initRippleEffect();
-            initMobileMenu();
-        });
-
-        function initRippleEffect() {
-            const rippleBg = document.querySelector('.ripple-bg');
-            if (!rippleBg) return;
-
-            const colors = JSON.parse(rippleBg.getAttribute('data-colors') || '["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]');
-            
-            function createRipple() {
-                const ripple = document.createElement('div');
-                ripple.className = 'ripple';
-                
-                const size = Math.random() * 100 + 50;
-                const x = Math.random() * 100;
-                const y = Math.random() * 100;
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                
-                ripple.style.width = `${size}px`;
-                ripple.style.height = `${size}px`;
-                ripple.style.left = `${x}%`;
-                ripple.style.top = `${y}%`;
-                ripple.style.backgroundColor = color;
-                
-                rippleBg.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 1000);
-            }
-            
-            // Создаем несколько рипплов при загрузке
-            for (let i = 0; i < 5; i++) {
-                setTimeout(createRipple, i * 200);
-            }
-            
-            // Периодическое создание новых рипплов
-            setInterval(createRipple, 1000);
-        }
-
-        // Инициализация мобильного меню
-        function initMobileMenu() {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.main-nav ul');
-            
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                });
-                
-                // Закрытие меню при клике на пункт (для мобильных)
-                const navLinks = document.querySelectorAll('.main-nav a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth <= 768) {
-                            navMenu.classList.remove('active');
-                        }
-                    });
-                });
-            }
-        }
-    </script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

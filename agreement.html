@@ -3,60 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Согласие на обработку персональных данных - Название компании</title>
-    <meta name="description" content="Согласие на обработку персональных данных пользователей">
-    
-    <!-- Подключение шрифта Museo -->
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
-    
+    <title>Название компании - Наружная реклама</title>
+    <meta name="description"
+          content="Профессиональное изготовление наружной рекламы: вывески, баннеры, рекламные конструкции">
+    <!-- Подключение шрифтов -->
+    <link rel="stylesheet" href="style.css"/>
 
 </head>
 <body>
-    <!-- Фон с анимацией -->
-    <div class='ripple-bg' data-colors='["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]'></div>
+<!-- Фон с анимацией -->
+<div class='ripple-bg' data-colors='["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]'></div>
 
-    <!-- Кнопка "Наверх" -->
-    <button class="scroll-to-top" id="scrollToTopBtn">Наверх</button>
-
+<!-- Основной контент -->
+<div class="main-content">
     <!-- Шапка сайта -->
-    <header>
+    <header class="header">
         <div class="container">
-            <nav class="main-nav" aria-label="Основная навигация">
-                <button class="nav-toggle">☰</button>
-                <ul>
-                    <li><a href='index.html'>Главная</a></li>
-                    <li><a href='about.html'>О нас</a></li>
-                    <li class="has-submenu">
-                        <a href='services.html'>Услуги</a>
-                        <ul class="submenu">
-                            <li><a href='vyveski.html'>Вывески</a></li>
-                            <li><a href='flagshtoki.html'>Флагштоки</a></li>
-                            <li><a href='reklamnye-konstrukcii.html'>Рекламные конструкции</a></li>
-                            <li><a href='tablichki-navigacii.html'>Таблички навигации</a></li>
-                            <li><a href='art-ob-ekty.html'>Арт-объекты</a></li>
-                            <li><a href='pechat-na-bannere.html'>Печать на баннере</a></li>
-                            <li><a href='proektnye-uslugi.html'>Проектные услуги</a></li>
-                        </ul>
-                    </li>
-                    <li><a href='price.html'>Цены</a></li>
-                    <li><a href='reviews.html'>Отзывы</a></li>
-                    <li><a href='foto.html'>Наши работы</a></li>
-                    <li><a href='contacts.html'>Контакты</a></li>
-                </ul>
-            </nav>
-            
             <div class="header-content">
-                <div>
-                    <img src="assets/img/logo.svg" alt="Логотип компании" class="logo">
-                    <h1>Название компании</h1>
-                    <p>Рекламное агентство</p>
+                <div class="header-content-logo">
+                    <div class="under-logo">
+                        НАРУЖНАЯ
+                    </div>
+                    <hr class="header-hr">
+                    <img src="images/logo.png" alt="Логотип компании" class="logo">
                 </div>
-                
+
                 <div class="contact-info">
-                    <p>г. Москва, Ленинский проспект, дом 0</p>
-                    <p>+7 (000) 000-00-00</p>
-                    <p>mail@company.ru</p>
-                    <button class="btn">Заказать звонок</button>
+                    <div class="contact-details">
+                        <div class="contact-details-phone">
+                            <p>ежедневно с 9:00 до 18:00</p>
+                            <p>+7(937) 009-07-05</p>
+                        </div>
+                        <nav class="main-nav">
+                            <button class="nav-toggle">☰</button>
+                            <ul>
+                                <li class="current"><a href="index.html">Главная</a></li>
+                                <li><a href="about.html">О нас</a></li>
+                                <li><a href="services.html">Услуги</a></li>
+                                <li><a href="price.html">Цены</a></li>
+                                <li><a href="portfolio.html">Наши работы</a></li>
+                                <li><a href="contacts.html">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <a href="https://t.me/your_telegram" class="telegram-btn" target="_blank" aria-label="Telegram">
+                        <img src="images/Telegram_logo.svg" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -143,126 +135,8 @@
             </div>
         </div>
     </footer>
+</div>
 
-    <script>
-        // Инициализация риппл-эффекта фона
-        document.addEventListener('DOMContentLoaded', function() {
-            initRippleEffect();
-            initMobileMenu();
-            initFadeIn();
-            initScrollToTop();
-        });
-
-        function initRippleEffect() {
-            const rippleBg = document.querySelector('.ripple-bg');
-            if (!rippleBg) return;
-
-            const colors = JSON.parse(rippleBg.getAttribute('data-colors') || '["#ffea1d", "#ffd909", "#ffc800", "#ffe538", "#ffb81b"]');
-            
-            function createRipple() {
-                const ripple = document.createElement('div');
-                ripple.className = 'ripple';
-                
-                const size = Math.random() * 100 + 50;
-                const x = Math.random() * 100;
-                const y = Math.random() * 100;
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                
-                ripple.style.width = `${size}px`;
-                ripple.style.height = `${size}px`;
-                ripple.style.left = `${x}%`;
-                ripple.style.top = `${y}%`;
-                ripple.style.backgroundColor = color;
-                
-                rippleBg.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 1000);
-            }
-            
-            // Создаем несколько рипплов при загрузке
-            for (let i = 0; i < 5; i++) {
-                setTimeout(createRipple, i * 200);
-            }
-            
-            // Периодическое создание новых рипплов
-            setInterval(createRipple, 1000);
-        }
-
-        // Инициализация мобильного меню
-        function initMobileMenu() {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.main-nav ul');
-            
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                });
-                
-                // Закрытие меню при клике на пункт (для мобильных)
-                const navLinks = document.querySelectorAll('.main-nav a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth <= 768) {
-                            navMenu.classList.remove('active');
-                        }
-                    });
-                });
-            }
-        }
-
-        // Инициализация анимации появления элементов
-        function initFadeIn() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const fadeInOnScroll = function() {
-                fadeElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const elementVisible = 150;
-                    
-                    if (elementTop < window.innerHeight - elementVisible) {
-                        element.style.opacity = 1;
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            };
-            
-            // Сначала скрываем все элементы
-            fadeElements.forEach(element => {
-                element.style.opacity = 0;
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            });
-            
-            // Запускаем при загрузке
-            fadeInOnScroll();
-            
-            // И при прокрутке
-            window.addEventListener('scroll', fadeInOnScroll);
-        }
-
-        // Инициализация кнопки "Наверх"
-        function initScrollToTop() {
-            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-            
-            // Показываем/скрываем кнопку при прокрутке
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollToTopBtn.classList.add('show');
-                } else {
-                    scrollToTopBtn.classList.remove('show');
-                }
-            });
-            
-            // Прокрутка наверх при клике
-            scrollToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-    </script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
