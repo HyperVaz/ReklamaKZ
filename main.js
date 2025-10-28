@@ -202,3 +202,83 @@ function initFadeIn() {
     // И при прокрутке
     window.addEventListener('scroll', fadeInOnScroll);
 }
+function initBurgerScroll() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const header = document.querySelector('.header');
+
+    if (!navToggle || !header) return;
+
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > header.offsetHeight) {
+            navToggle.classList.add('hidden');
+        } else {
+            navToggle.classList.remove('hidden');
+        }
+        lastScrollY = window.scrollY;
+    });
+}
+
+// Добавьте вызов в DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    initBurgerScroll();
+    // остальной код инициализации...
+});
+// Модальное окно расчета проекта
+function initProjectModal() {
+    const modal = document.getElementById('projectModal');
+    const openBtn = document.querySelector('.payment__section .btn');
+    const closeBtn = document.querySelector('.close-modal');
+    const form = document.querySelector('.project-form');
+    const phoneInput = document.querySelector('input[type="tel"]');
+    const checkbox = document.getElementById('agreePolicy');
+    const submitBtn = document.querySelector('.submit-btn');
+
+    // Открытие модального окна
+    openBtn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    // Закрытие модального окна
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Закрытие при клике вне модального окна
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Валидация формы
+    function validateForm() {
+        const isPhoneValid = phoneInput.value.trim().length >= 5;
+        const isCheckboxChecked = checkbox.checked;
+
+        submitBtn.disabled = !(isPhoneValid && isCheckboxChecked);
+    }
+
+    // Слушатели событий для валидации
+    phoneInput.addEventListener('input', validateForm);
+    checkbox.addEventListener('change', validateForm);
+
+    // Обработка отправки формы
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!submitBtn.disabled) {
+            // Здесь можно добавить отправку данных
+            alert('Форма отправлена! Мы свяжемся с вами в ближайшее время.');
+            modal.style.display = 'none';
+            form.reset();
+            submitBtn.disabled = true;
+        }
+    });
+}
+
+// Добавьте вызов в DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    initProjectModal();
+    // остальной код инициализации...
+});

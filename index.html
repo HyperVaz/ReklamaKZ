@@ -54,6 +54,12 @@
         </div>
     </header>
 
+<!--    TODO:-->
+<!--    1. Добавь хедер на остальные страницы-->
+<!--    2. Добавь хедер в хедер.пхп-->
+<!--    3. Разбей код по модулям-->
+<!--    4. Почисти стили и скрипты-->
+
     <!-- Основное содержимое -->
     <main>
 
@@ -347,15 +353,40 @@
         <!--                </div>-->
         <!--            </div>-->
         <!--        </section>-->
-        <!--    </main>-->
-
+    </main>
         <!-- Подвал сайта -->
         <footer>
             <div class="container">
                 <p>Copyright &copy; 2024 - 2025 Название компании</p>
             </div>
-        </footer>
+           </footer>
 </div>
+<div id="projectModal" class="modal">
+    <div class="modal-content project-modal">
+        <span class="close-modal">&times;</span>
+        <h2>Рассчитать проект</h2>
+        <p class="modal-subtitle">Введите данные для заказа обратного звонка</p>
+
+        <form class="project-form">
+            <div class="form-group">
+                <input type="text" placeholder="Ваше имя" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <input type="tel" placeholder="Телефон *" class="form-input" required>
+                <span class="required-star">*</span>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="agreePolicy" required>
+                <label for="agreePolicy">Я принимаю условия обработки моих персональных данных *</label>
+            </div>
+
+            <button type="submit" class="submit-btn" disabled>Отправить</button>
+        </form>
+    </div>
+</div>
+
 
 <script src="main.js">
 
