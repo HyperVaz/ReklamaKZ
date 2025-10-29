@@ -12,7 +12,7 @@ export function initGallery() {
     // Запускаем анимацию
     animateSlider();
 
-    // Закрытие модалки по клику на фон
+    // Закрытие модального окна по клику на фон
     document.getElementById('modal')?.addEventListener('click', function(e) {
         if (e.target === this) closeModal();
     });
