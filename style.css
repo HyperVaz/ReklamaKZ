@@ -1744,3 +1744,39 @@ footer a:hover {
     font-size: 0.8rem;
     text-align: center;
 }
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #6118DE;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-family: 'BlissPro', Arial, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(97, 24, 222, 0.3);
+}
+
+.scroll-to-top.show {
+    display: block;
+}
+
+.scroll-to-top:hover {
+    background: #A78BFA;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

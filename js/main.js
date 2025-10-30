@@ -4,6 +4,7 @@ import { initMobileMenu } from './mobileMenu.js';
 import { initProjectModal } from './projectModal.js';
 import { initPackageModal } from './projectModal.js';
 import { initAnimations } from './animations.js';
+import { initScrollToTop } from './scrollToTop.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     initRippleEffect();
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', function() {
     initProjectModal();
     initPackageModal();
     initGallery();
+    initScrollToTop();
 });
