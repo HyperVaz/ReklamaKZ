@@ -151,6 +151,14 @@ h1, h2, .under-logo{
 .payment__section_undsec, .btn-section{
     display: flex;
 }
+.payment__section_undsec{
+    align-items: center;
+}
+.btn-section{
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
 .payment__section_undsec-p{
     font-size: 1.3rem;
 }
@@ -1067,7 +1075,6 @@ footer a:hover {
 .btn {
     background: #6118DE;
     color: white;
-    padding: 20px 24px;
     border: none;
     border-radius: 25px;
     cursor: pointer;

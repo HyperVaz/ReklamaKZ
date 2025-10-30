@@ -17,7 +17,6 @@
 <!-- Основной контент -->
 <div class="main-content">
     <!-- Шапка сайта -->
-<!--    TODO Cделай всё по одной линии-->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -101,11 +100,11 @@
                             <h2 class="payment__section_undsec-head">Мы изготовим вывеску за 24 часа</h2>
                             <p class="payment__section_undsec-p">От идеи до реализации с нами один шаг!</p>
                         </div>
-                        <img src="images/logo.png" alt="" class="payment__section_undsec_img">
+                        <img src="images/изображение%20скоро%20появится.png" alt="" class="payment__section_undsec_img">
                     </div>
                     <div class="btn-section">
                         <button class="btn fade-in">Рассчитать проект</button>
-                        <img src="images/logo.png" alt="" class="btn-section-image">
+                        <img src="images/изображение%20скоро%20появится.png" alt="" class="btn-section-image">
                     </div>
                 </section>
             </div>
@@ -284,7 +283,6 @@
                             и установку, вы получаете 15% скидку на весь проект.</p>
                         <p>Эта акция позволяет вам не только создать единый, стильный облик для вашего бизнеса, но и
                             существенно сэкономить на комплексных работах</p>
-<!--                        TODO: привяжи модальное окно -->
                         <button class="btn" style="margin-top: 20px;">ЗАКАЗАТЬ ПО АКЦИИ</button>
                     </div>
                     <div class="package-image fade-in">
@@ -397,7 +395,12 @@
                     <p>+7 (905) 312-41-71</p>
                     <p>mail@company.ru</p>
                     <p>г.Казань, пр.Ф.Амирхана дом 8Б, оф.1</p>
-<!--                    TODO: Вставь иконки одноклассников и вк-->
+                    <a href="https://vk.com">
+                        <img src="https://logo-teka.com/wp-content/uploads/2025/06/vk-logo.svg" alt="SVG logo VK" style="max-width:30px;" />
+                    </a>
+                    <a href="https://ok.ru">
+                        <img src="https://logo-teka.com/wp-content/uploads/2025/06/ok-sign-logo.png" alt="PNG logo Одноклассники (ОК)" style="max-width:30px;" />
+                    </a>
                 </div>
                 <div class="fade-in footer-graphic">
                     <h3 class="graphic-head">График работы</h3>
@@ -411,6 +414,8 @@
             <p>Copyright &copy; 2024 - 2025 Название компании</p>
         </div>
     </footer>
+
+<!--    TODO сделать кнопку "Наверх"-->
 </div>
 
 <!--Модальное окно обратной связи-->
@@ -432,6 +437,31 @@
             <div class="checkbox-group">
                 <input type="checkbox" id="agreePolicy" required>
                 <label for="agreePolicy">Я принимаю условия обработки моих персональных данных *</label>
+            </div>
+
+            <button type="submit" class="submit-btn" disabled>Отправить</button>
+        </form>
+    </div>
+</div>
+<!-- Модальное окно для акции -->
+<div id="packageModal" class="modal">
+    <div class="modal-content project-modal">
+        <span class="close-modal">&times;</span>
+        <h2>Заказать по акции</h2>
+        <p class="modal-subtitle">Введите данные для заказа по акционному предложению</p>
+
+        <form class="project-form">
+            <div class="form-group">
+                <input type="text" placeholder="Ваше имя" class="input-modal-form">
+            </div>
+
+            <div class="form-group">
+                <input type="tel" placeholder="Телефон *" class="input-modal-form" required>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="agreePolicyPackage" required>
+                <label for="agreePolicyPackage">Я принимаю условия обработки моих персональных данных *</label>
             </div>
 
             <button type="submit" class="submit-btn" disabled>Отправить</button>
