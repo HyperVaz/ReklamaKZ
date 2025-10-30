@@ -17,6 +17,7 @@
 <!-- Основной контент -->
 <div class="main-content">
     <!-- Шапка сайта -->
+<!--    TODO Cделай всё по одной линии-->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -283,6 +284,7 @@
                             и установку, вы получаете 15% скидку на весь проект.</p>
                         <p>Эта акция позволяет вам не только создать единый, стильный облик для вашего бизнеса, но и
                             существенно сэкономить на комплексных работах</p>
+<!--                        TODO: привяжи модальное окно -->
                         <button class="btn" style="margin-top: 20px;">ЗАКАЗАТЬ ПО АКЦИИ</button>
                     </div>
                     <div class="package-image fade-in">
@@ -296,19 +298,30 @@
         <section class="clients">
             <div class="container">
                 <h2 class="fade-in clients-head">Наши клиенты</h2>
-                <div class="grid">
+                <div class="clients-flexbox">
                     <div class="card card-partners fade-in">
-                        <img src="images/fgs16_partners_1.webp" alt="">
+                        <img class="card-partners-photo" src="images/fgs16_partners_1.webp" alt="">
                         <h3>Компания «Express»</h3>
                     </div>
-                    <div class="card fade-in">
-                        <h3>Компания «Book Store»</h3>
+                    <div class="card card-partners fade-in">
+                        <img class="card-partners-photo" src="images/fgs16_partners_2.webp" alt="">
+                        <h3>Компания «Color lab»</h3>
                     </div>
-                    <div class="card fade-in">
-                        <h3>Компания «Color Lab»</h3>
+                    <div class="card card-partners fade-in">
+                        <img class="card-partners-photo" src="images/fgs16_partners_3.webp" alt="">
+                        <h3>Компания «Toch»</h3>
                     </div>
-                    <div class="card fade-in">
+                    <div class="card card-partners fade-in">
+                        <img class="card-partners-photo" src="images/fgs16_partners_4.webp" alt="">
+                        <h3>Компания «Book store»</h3>
+                    </div>
+                    <div class="card card-partners fade-in">
+                        <img class="card-partners-photo" src="images/fgs16_partners_6.webp" alt="">
                         <h3>Компания «Glow»</h3>
+                    </div>
+                    <div class="card card-partners fade-in">
+                        <img class="card-partners-photo" src="images/fgs16_partners_11.webp" alt="">
+                        <h3>Компания «Trade»</h3>
                     </div>
                 </div>
             </div>
@@ -360,6 +373,7 @@
                         <div class="form-group checkbox-group">
                             <input type="checkbox" id="agree" required>
                             <label for="agree">Я согласен на обработку моих персональных данных *</label>
+<!--                            TODO реализовать красные звездочки и вывести страницу согласия с персональными данными-->
                         </div>
                         <button type="submit" class="btn contact-form-btn">Отправить</button>
                     </form>
@@ -383,7 +397,7 @@
                     <p>+7 (905) 312-41-71</p>
                     <p>mail@company.ru</p>
                     <p>г.Казань, пр.Ф.Амирхана дом 8Б, оф.1</p>
-<!--                    TODO: Вставь иконки одноклассников-->
+<!--                    TODO: Вставь иконки одноклассников и вк-->
                 </div>
                 <div class="fade-in footer-graphic">
                     <h3 class="graphic-head">График работы</h3>

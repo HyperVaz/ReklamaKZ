@@ -1527,7 +1527,6 @@ footer a:hover {
 }
 .card-partners{
     border: none;
-    padding-top: calc(100% * 2 / 3) !important;
 }
 .card-partners img{
     object-fit: cover;
@@ -1606,7 +1605,6 @@ footer a:hover {
     width: 22px;
     height: 22px;
     margin-left: 15px;
-    margin-top: 35px;
 }
 .footer-graphic{
     margin-left: 25%;
@@ -1619,6 +1617,7 @@ footer a:hover {
     color: black;
     opacity: 0.85;
     border-radius: 15px 15px 0 0;
+    margin-top: 50px;
 }
 /* Стили для слайдера клиентов */
 .client-slides {
@@ -1718,4 +1717,18 @@ footer a:hover {
     .client-slide {
         min-width: calc(50% - 10px); /* 2 карточки */
     }
+}
+.card-partners{
+    width: 53%;
+}
+.clients-flexbox{
+    display: flex;
+    justify-content: center;
+}
+.card-partners-photo{
+    width: 100%;
+}
+.card-partners h3{
+    font-size: 0.8rem;
+    text-align: center;
 }
