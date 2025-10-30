@@ -65,6 +65,8 @@ h1, h2, .under-logo{
 }
 .main-nav{
     font-size: 1.3rem;
+    margin-bottom: 30px;
+    margin-top: -42px;
 }
 
 
@@ -330,7 +332,7 @@ h3 {
 
 header {
     background: #f8f8f8;
-    padding: 20px 0 15px 0;
+    padding: 20px 0 5px 0;
     border-bottom: 1px solid #eee;
     border-radius: 0 0 15px 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -1600,6 +1602,9 @@ footer a:hover {
 .contact-details-footer-telegram{
     display: flex;
     height: 25px;
+}
+.contact-details-phone{
+    margin-bottom: 86px;
 }
 .telegram-btn-footer{
     width: 22px;
