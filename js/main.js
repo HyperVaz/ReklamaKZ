@@ -5,6 +5,8 @@ import { initProjectModal } from './projectModal.js';
 import { initPackageModal } from './projectModal.js';
 import { initAnimations } from './animations.js';
 import { initScrollToTop } from './scrollToTop.js';
+import {initClientsSlider} from "./clientsSlider.js";
+import {initTestimonialModal} from "./testimonialModal.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     initRippleEffect();
@@ -14,4 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initPackageModal();
     initGallery();
     initScrollToTop();
+    initClientsSlider();
+    initTestimonialModal();
 });

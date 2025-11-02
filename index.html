@@ -134,7 +134,7 @@
                             Свяжитесь с нами, чтобы обсудить, как мы можем помочь вашему бренду выйти на
                             новый уровень с помощью эффективной наружной рекламы.</p>
                         <section class="experience">
-                            <div class="container">
+                            <div class="container experience-container">
                                 <div class="grid">
                                     <div class="experience-card fade-in">
                                         <h3 class="experience-card-header">10 лет</h3>
@@ -283,7 +283,7 @@
                             и установку, вы получаете 15% скидку на весь проект.</p>
                         <p>Эта акция позволяет вам не только создать единый, стильный облик для вашего бизнеса, но и
                             существенно сэкономить на комплексных работах</p>
-                        <button class="btn" style="margin-top: 20px;">ЗАКАЗАТЬ ПО АКЦИИ</button>
+                        <button class="btn btn-package" style="margin-top: 20px;">ЗАКАЗАТЬ ПО АКЦИИ</button>
                     </div>
                     <div class="package-image fade-in">
                         <img src="images/zaglushka.webp" alt="Пакетное предложение">
@@ -291,36 +291,51 @@
                 </div>
             </div>
         </section>
-        <!--            TODO реализовать слайдер клиентов-->
         <!-- Блок "Наши клиенты" -->
         <section class="clients">
             <div class="container">
                 <h2 class="fade-in clients-head">Наши клиенты</h2>
-                <div class="clients-flexbox">
-                    <div class="card card-partners fade-in">
-                        <img class="card-partners-photo" src="images/fgs16_partners_1.webp" alt="">
-                        <h3>Компания «Express»</h3>
+                <div class="clients-slider">
+                    <button class="slider-btn prev">←</button>
+                    <div class="clients-slider-track">
+                        <div class="client-slide">
+                            <div class="card card-partners fade-in">
+                                <img class="card-partners-photo" src="images/fgs16_partners_1.webp" alt="">
+                                <h3>Компания «Express»</h3>
+                            </div>
+                        </div>
+                        <div class="client-slide">
+                            <div class="card card-partners fade-in">
+                                <img class="card-partners-photo" src="images/fgs16_partners_2.webp" alt="">
+                                <h3>Компания «Color lab»</h3>
+                            </div>
+                        </div>
+                        <div class="client-slide">
+                            <div class="card card-partners fade-in">
+                                <img class="card-partners-photo" src="images/fgs16_partners_3.webp" alt="">
+                                <h3>Компания «Toch»</h3>
+                            </div>
+                        </div>
+                        <div class="client-slide">
+                            <div class="card card-partners fade-in">
+                                <img class="card-partners-photo" src="images/fgs16_partners_4.webp" alt="">
+                                <h3>Компания «Book store»</h3>
+                            </div>
+                        </div>
+                        <div class="client-slide">
+                            <div class="card card-partners fade-in">
+                                <img class="card-partners-photo" src="images/fgs16_partners_6.webp" alt="">
+                                <h3>Компания «Glow»</h3>
+                            </div>
+                        </div>
+                        <div class="client-slide">
+                            <div class="card card-partners fade-in">
+                                <img class="card-partners-photo" src="images/fgs16_partners_11.webp" alt="">
+                                <h3>Компания «Trade»</h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card card-partners fade-in">
-                        <img class="card-partners-photo" src="images/fgs16_partners_2.webp" alt="">
-                        <h3>Компания «Color lab»</h3>
-                    </div>
-                    <div class="card card-partners fade-in">
-                        <img class="card-partners-photo" src="images/fgs16_partners_3.webp" alt="">
-                        <h3>Компания «Toch»</h3>
-                    </div>
-                    <div class="card card-partners fade-in">
-                        <img class="card-partners-photo" src="images/fgs16_partners_4.webp" alt="">
-                        <h3>Компания «Book store»</h3>
-                    </div>
-                    <div class="card card-partners fade-in">
-                        <img class="card-partners-photo" src="images/fgs16_partners_6.webp" alt="">
-                        <h3>Компания «Glow»</h3>
-                    </div>
-                    <div class="card card-partners fade-in">
-                        <img class="card-partners-photo" src="images/fgs16_partners_11.webp" alt="">
-                        <h3>Компания «Trade»</h3>
-                    </div>
+                    <button class="slider-btn next">→</button>
                 </div>
             </div>
         </section>
@@ -365,13 +380,12 @@
                             <input class="form-group-input" type="text" id="name">
                         </div>
                         <div class="form-group">
-                            <label for="phone" class="form-group-label">Телефон *</label>
+                            <label for="phone" class="form-group-label">Телефон<span class="red_star"> *</span></label>
                             <input class="form-group-input" type="tel" id="phone" required>
                         </div>
                         <div class="form-group checkbox-group">
                             <input type="checkbox" id="agree" required>
-                            <label for="agree">Я согласен на обработку моих персональных данных *</label>
-<!--                            TODO реализовать красные звездочки и вывести страницу согласия с персональными данными-->
+                            <label for="agree">Я согласен на обработку моих <a href="agreement.html">персональных данных</a><span class="red_star"> *</span></label>
                         </div>
                         <button type="submit" class="btn contact-form-btn">Отправить</button>
                     </form>
@@ -388,7 +402,8 @@
                 <div class="fade-in">
                     <div class="contact-details-footer-telegram">
                         <p>+7 (937) 009-07-05</p>
-                        <a href="https://t.me/your_telegram" class="telegram-btn telegram-btn-footer" target="_blank" aria-label="Telegram">
+                        <a href="https://t.me/your_telegram" class="telegram-btn telegram-btn-footer" target="_blank"
+                           aria-label="Telegram">
                             <img src="images/Telegram_logo.svg" alt="">
                         </a>
                     </div>
@@ -396,10 +411,12 @@
                     <p>mail@company.ru</p>
                     <p>г.Казань, пр.Ф.Амирхана дом 8Б, оф.1</p>
                     <a href="https://vk.com">
-                        <img src="https://logo-teka.com/wp-content/uploads/2025/06/vk-logo.svg" alt="SVG logo VK" style="max-width:30px;" />
+                        <img src="https://logo-teka.com/wp-content/uploads/2025/06/vk-logo.svg" alt="SVG logo VK"
+                             style="max-width:30px;"/>
                     </a>
                     <a href="https://ok.ru">
-                        <img src="https://logo-teka.com/wp-content/uploads/2025/06/ok-sign-logo.png" alt="PNG logo Одноклассники (ОК)" style="max-width:30px;" />
+                        <img src="https://logo-teka.com/wp-content/uploads/2025/06/ok-sign-logo.png"
+                             alt="PNG logo Одноклассники (ОК)" style="max-width:30px;"/>
                     </a>
                 </div>
                 <div class="fade-in footer-graphic">
@@ -415,7 +432,6 @@
         </div>
     </footer>
 
-<!--    TODO сделать кнопку "Наверх"-->
 </div>
 
 <!--Модальное окно обратной связи-->
@@ -436,7 +452,7 @@
 
             <div class="checkbox-group">
                 <input type="checkbox" id="agreePolicy" required>
-                <label for="agreePolicy">Я принимаю условия обработки моих персональных данных *</label>
+                <label for="agreePolicy">Я согласен на обработку моих <a href="agreement.html">персональных данных</a><span class="red_star"> *</span></label>
             </div>
 
             <button type="submit" class="submit-btn" disabled>Отправить</button>
@@ -469,6 +485,13 @@
     </div>
 </div>
 <button id="scrollToTop" class="scroll-to-top">НАВЕРХ</button>
+<!-- Модальное окно для благодарностей -->
+<div id="testimonialModal" class="testimonial-modal">
+    <span class="close-testimonial">&times;</span>
+    <div class="testimonial-modal-content">
+        <img id="testimonialModalImg" src="" alt="Увеличенное изображение">
+    </div>
+</div>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>
