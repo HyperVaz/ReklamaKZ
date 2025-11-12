@@ -1,8 +1,21 @@
 let autoPlayInterval;
+let isPaused = false;
+let animationStartTime;
+let animationDuration = 40000;
+let animationStartPosition;
+let animationTargetPosition;
+let slidesContainer;
+let slideWidth;
+let totalSlides;
 
 export function initGallery() {
     const slides = document.getElementById('slides');
     if (!slides) return;
+
+    slidesContainer = slides;
+
+    // Получаем общее количество слайдов
+    totalSlides = document.querySelectorAll('.slide').length;
 
     // Глобальные функции для кнопок слайдера
     window.moveSlider = moveSlider;
@@ -16,40 +29,130 @@ export function initGallery() {
     document.getElementById('modal')?.addEventListener('click', function(e) {
         if (e.target === this) closeModal();
     });
+
+    // Добавляем обработчики для паузы при наведении
+    const sliderContainer = slides.closest('.slider-container') || slides.parentElement;
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', pauseSlider);
+        sliderContainer.addEventListener('mouseleave', resumeSlider);
+    }
+}
+
+function pauseSlider() {
+    isPaused = true;
+    if (!slidesContainer) return;
+
+    // Сохраняем текущую позицию и останавливаем анимацию
+    const currentTransform = getComputedStyle(slidesContainer).transform;
+    slidesContainer.style.transform = currentTransform;
+    slidesContainer.style.transition = 'none';
+}
+
+function resumeSlider() {
+    if (!isPaused) return;
+
+    isPaused = false;
+    if (!slidesContainer) return;
+
+    // Получаем текущую позицию
+    const currentTransform = getComputedStyle(slidesContainer).transform;
+    const matrix = new DOMMatrix(currentTransform);
+    const currentPosition = matrix.m41;
+
+    // Вычисляем оставшееся время анимации на основе прогресса
+    const totalDistance = Math.abs(animationTargetPosition - animationStartPosition);
+    const currentDistance = Math.abs(currentPosition - animationStartPosition);
+    const progress = Math.min(currentDistance / totalDistance, 1);
+    const elapsedTime = progress * animationDuration;
+    const remainingTime = animationDuration - elapsedTime;
+
+    // Продолжаем анимацию с оставшимся временем
+    slidesContainer.style.transition = `transform ${remainingTime}ms linear`;
+    slidesContainer.style.transform = `translateX(${animationTargetPosition}px)`;
+
+    // Запланировать закольцовывание после завершения текущей анимации
+    setTimeout(() => {
+        if (!isPaused) {
+            seamlessLoop();
+        }
+    }, remainingTime);
 }
 
 function animateSlider() {
-    const slides = document.getElementById('slides');
+    if (isPaused) return;
+
     const slide = document.querySelector('.slide');
-    if (!slides || !slide) return;
+    if (!slidesContainer || !slide) return;
 
-    const slideWidth = slide.offsetWidth + 10;
-    slides.style.transform = `translateX(-${slideWidth * 4}px)`;
+    // Вычисляем ширину слайда
+    slideWidth = slide.offsetWidth + 10;
 
+    // Сохраняем параметры анимации для возможности возобновления
+    animationStartPosition = 0;
+    animationTargetPosition = -slideWidth * totalSlides;
+    animationStartTime = Date.now();
+
+    slidesContainer.style.transition = `transform ${animationDuration}ms linear`;
+    slidesContainer.style.transform = `translateX(${animationTargetPosition}px)`;
+
+    // Планируем закольцовывание
     setTimeout(() => {
-        slides.style.transition = 'none';
-        slides.style.transform = 'translateX(0)';
-        setTimeout(() => {
-            slides.style.transition = 'transform 120s linear';
+        if (!isPaused) {
+            seamlessLoop();
+        }
+    }, animationDuration);
+}
+
+function seamlessLoop() {
+    if (!slidesContainer) return;
+
+    // Бесшовное закольцовывание - мгновенно возвращаемся к началу
+    slidesContainer.style.transition = 'none';
+    slidesContainer.style.transform = 'translateX(0)';
+
+    // Небольшая задержка перед началом новой анимации
+    setTimeout(() => {
+        if (!isPaused) {
+            // Запускаем новую анимацию
             animateSlider();
-        }, 50);
-    }, 120000);
+        }
+    }, 50);
 }
 
 function moveSlider(direction) {
     clearInterval(autoPlayInterval);
+    isPaused = false;
 
-    const slides = document.getElementById('slides');
+    if (!slidesContainer) return;
     const slide = document.querySelector('.slide');
-    if (!slides || !slide) return;
+    if (!slide) return;
 
-    const slideWidth = slide.offsetWidth + 10;
-    const currentTransform = getComputedStyle(slides).transform;
+    // Обновляем ширину слайда если нужно
+    if (!slideWidth) {
+        slideWidth = slide.offsetWidth + 10;
+    }
+
+    const currentTransform = getComputedStyle(slidesContainer).transform;
     const matrix = new DOMMatrix(currentTransform);
-    const currentPosition = matrix.m41;
+    let currentPosition = matrix.m41;
 
-    slides.style.transition = 'transform 0.5s ease';
-    slides.style.transform = `translateX(${currentPosition - (slideWidth * direction)}px)`;
+    // Вычисляем новую позицию
+    let newPosition = currentPosition - (slideWidth * direction);
+
+    // Проверяем границы и обеспечиваем закольцовывание
+    const maxPosition = -slideWidth * (totalSlides - 1);
+
+    // Если вышли за правую границу (начало), переходим в конец
+    if (newPosition > 0) {
+        newPosition = maxPosition;
+    }
+    // Если вышли за левую границу (конец), переходим в начало
+    else if (newPosition < -slideWidth * totalSlides) {
+        newPosition = 0;
+    }
+
+    slidesContainer.style.transition = 'transform 0.5s ease';
+    slidesContainer.style.transform = `translateX(${newPosition}px)`;
 
     setTimeout(() => {
         restartAutoPlay();
@@ -58,29 +161,38 @@ function moveSlider(direction) {
 
 function restartAutoPlay() {
     clearInterval(autoPlayInterval);
+    isPaused = false;
 
-    const slides = document.getElementById('slides');
+    if (!slidesContainer) return;
     const slide = document.querySelector('.slide');
-    if (!slides || !slide) return;
+    if (!slide) return;
 
-    const currentTransform = getComputedStyle(slides).transform;
+    // Обновляем ширину слайда если нужно
+    if (!slideWidth) {
+        slideWidth = slide.offsetWidth + 10;
+    }
+
+    const currentTransform = getComputedStyle(slidesContainer).transform;
     const matrix = new DOMMatrix(currentTransform);
     const currentPosition = matrix.m41;
 
-    slides.style.transition = 'transform 120s linear';
-    const targetPosition = currentPosition - (slide.offsetWidth + 10) * 4;
-    slides.style.transform = `translateX(${targetPosition}px)`;
+    // Сохраняем параметры анимации для возможности возобновления
+    animationStartPosition = currentPosition;
+    animationTargetPosition = currentPosition - slideWidth * totalSlides;
+    animationStartTime = Date.now();
 
+    slidesContainer.style.transition = `transform ${animationDuration}ms linear`;
+    slidesContainer.style.transform = `translateX(${animationTargetPosition}px)`;
+
+    // Планируем закольцовывание
     setTimeout(() => {
-        slides.style.transition = 'none';
-        slides.style.transform = 'translateX(0)';
-        setTimeout(() => {
-            slides.style.transition = 'transform 120s linear';
-            animateSlider();
-        }, 50);
-    }, 120000 - (Math.abs(currentPosition) / (slide.offsetWidth + 10) * 30000));
+        if (!isPaused) {
+            seamlessLoop();
+        }
+    }, animationDuration);
 }
 
+// Остальные функции без изменений
 function openModal(imagePath) {
     const modalContent = document.getElementById('modalContent');
     if (!modalContent) return;
