@@ -45,13 +45,16 @@ export function initProjectModal() {
 export function initPackageModal() {
     const modal = document.getElementById('packageModal');
     const openBtn = document.querySelector('.package .btn');
+
+    // Если нет модального окна или кнопки открытия - выходим
+    if (!modal || !openBtn) return;
+
+    // Теперь безопасно получаем остальные элементы
     const closeBtn = modal.querySelector('.close-modal');
     const form = modal.querySelector('.project-form');
-    const phoneInput = form.querySelector('input[type="tel"]');
+    const phoneInput = form?.querySelector('input[type="tel"]');
     const checkbox = document.getElementById('agreePolicyPackage');
-    const submitBtn = form.querySelector('.submit-btn');
-
-    if (!modal || !openBtn) return;
+    const submitBtn = form?.querySelector('.submit-btn');
 
     openBtn.addEventListener('click', () => {
         modal.style.display = 'flex';
@@ -68,6 +71,8 @@ export function initPackageModal() {
     });
 
     function validateForm() {
+        if (!phoneInput || !checkbox || !submitBtn) return;
+
         const isPhoneValid = phoneInput.value.trim().length >= 5;
         const isCheckboxChecked = checkbox.checked;
         submitBtn.disabled = !(isPhoneValid && isCheckboxChecked);
@@ -78,7 +83,7 @@ export function initPackageModal() {
 
     form?.addEventListener('submit', (e) => {
         e.preventDefault();
-        if (!submitBtn.disabled) {
+        if (submitBtn && !submitBtn.disabled) {
             alert('Форма отправлена! Мы свяжемся с вами в ближайшее время.');
             modal.style.display = 'none';
             form.reset();

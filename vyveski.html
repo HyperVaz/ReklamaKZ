@@ -59,7 +59,8 @@
         <!-- Хлебные крошки -->
         <section class="breadcrumbs">
             <div class="container">
-                <a href="index.html">Главная</a><span class="breadcrumbs-separator">/</span><a href="services.html">Услуги</a><span class="breadcrumbs-separator">/</span><span class="breadcrumbs-current">Вывески</span>
+                <a href="index.html">Главная</a><span class="breadcrumbs-separator">/</span><a href="services.html">Услуги</a><span
+                    class="breadcrumbs-separator">/</span><span class="breadcrumbs-current">Вывески</span>
             </div>
         </section>
 
@@ -71,38 +72,31 @@
         </section>
 
         <!-- Контент страницы -->
-        <section class="page-content">
+        <section class="page-content mb-50">
             <div class="container">
-                <div class="content fade-in">
-                    <p>Мы изготавливаем качественные и долговечные вывески для вашего бизнеса. Наша продукция привлекает внимание, подчеркивает стиль бренда и идеально подходит для любой сферы - от магазинов и ресторанов до офисов и крупных комплексов. Используем современные технологии и материалы, чтобы каждая вывеска выглядела ярко и прослужила долго.</p>
+                <div class="content fade-in card">
+                    <div class="flex flex-wrap">
+                        <div class="content-text"><p>Мы изготавливаем качественные и долговечные вывески для вашего
+                            бизнеса.
+                            Наша продукция привлекает внимание, подчеркивает стиль бренда и идеально подходит для любой
+                            сферы - от магазинов и ресторанов до офисов и крупных комплексов. Используем современные
+                            технологии и материалы, чтобы каждая вывеска выглядела ярко и прослужила долго.</p>
+                            <p>Мы предлагаем полный цикл услуг - от разработки дизайна до монтажа на месте. Каждая
+                                вывеска
+                                разрабатывается индивидуально, с учетом особенностей вашего бизнеса и его расположения,
+                                чтобы максимально эффективно привлечь внимание клиентов.</p>
+                        </div>
 
-                    <p>Мы предлагаем полный цикл услуг - от разработки дизайна до монтажа на месте. Каждая вывеска разрабатывается индивидуально, с учетом особенностей вашего бизнеса и его расположения, чтобы максимально эффективно привлечь внимание клиентов.</p>
-                    
-                    <div class="order-form fade-in">
-                        <h2>Заказать рекламу</h2>
-                        <p>Введите данные для заказа обратного звонка</p>
-                        
-                        <form>
-                            <div class="form-group">
-                                <label for="name">Имя *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone">Телефон *</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>
-                                    <input type="checkbox" name="agreement" required>
-                                    Я принимаю условия обработки моих <a href="agreement.html" target="_blank">персональных данных</a> *
-                                </label>
-                            </div>
-                            
-                            <button type="submit" class="btn">Отправить</button>
-                        </form>
+                        <div class="content-image">
+                            <img src="images/zaglushka.webp" alt="" class="content-image-img">
+                        </div>
                     </div>
+
+                    <section class="payment__section payment__section-vyveski">
+                        <div class="btn-section">
+                            <button class="btn fade-in">Заказать</button>
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>
@@ -147,6 +141,33 @@
         </div>
     </footer>
 </div>
+<!--Модальное окно обратной связи-->
+<div id="projectModal" class="modal">
+    <div class="modal-content project-modal">
+        <span class="close-modal">&times;</span>
+        <h2>Заказать рекламу</h2>
+        <p class="modal-subtitle">Введите данные для заказа обратного звонка</p>
+
+        <form class="project-form">
+            <div class="form-group">
+                <input type="text" placeholder="Ваше имя" class="input-modal-form">
+            </div>
+
+            <div class="form-group">
+                <input type="tel" placeholder="Телефон *" class="input-modal-form" required>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="agreePolicy" required>
+                <label for="agreePolicy">Я согласен на обработку моих <a href="agreement.html">персональных
+                    данных</a><span class="red_star"> *</span></label>
+            </div>
+
+            <button type="submit" class="submit-btn" disabled>Отправить</button>
+        </form>
+    </div>
+</div>
+<button id="scrollToTop" class="scroll-to-top">НАВЕРХ</button>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>

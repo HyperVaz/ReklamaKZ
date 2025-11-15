@@ -1256,10 +1256,6 @@ footer a:hover {
         font-size: 1.75rem;
     }
 
-    section {
-        padding: 40px 0;
-    }
-
     header {
         border-radius: 0 0 10px 10px;
     }
@@ -1323,12 +1319,14 @@ footer a:hover {
     .telegram-btn{
         right: 30%;
     }
+
 }
 
 @media (max-width: 788px) {
     .telegram-btn{
         margin-bottom: 20%;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -2048,4 +2046,30 @@ footer a:hover {
 
 .service-item:hover .service-arrow {
     transform: translateX(4px);
+}
+@media (max-width: 1000px) {
+    .services-list{
+        width: 100%;
+    }
+}
+.payment__section-vyveski{
+    justify-content: left;
+}
+.flex{
+    display: flex;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.content-text{
+    width: 60%;
+}
+.content-image{
+    width: 40%;
+}
+.content-image-img{
+    max-width: 100%;
+}
+.mb-50{
+    margin-bottom: 50px;
 }
