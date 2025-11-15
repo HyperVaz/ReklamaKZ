@@ -688,9 +688,8 @@ label {
 }
 
 .review-card {
-    background: #f8f9fa;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 25px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
@@ -1988,4 +1987,65 @@ footer a:hover {
 .contacts-h1{
     margin: 0;
     padding: 0;
+}
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.service-item {
+    display: block;
+    background: white;
+    border: 2px solid #8A2BE2;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.service-item:hover {
+    background: #f8f0ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+}
+
+.service-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 20px;
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-title {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.service-description {
+    margin: 0;
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.service-arrow {
+    font-size: 24px;
+    color: #8A2BE2;
+    font-weight: bold;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-arrow {
+    transform: translateX(4px);
 }
