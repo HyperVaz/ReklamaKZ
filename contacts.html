@@ -54,80 +54,43 @@
         </div>
     </header>
 
-            <!-- Основной контент -->
-            <main>
-                <!-- Хлебные крошки -->
-                <nav class='breadcrumbs'>
-                    <a href="index.html">Главная</a>
-                    <span class='breadcrumbs-separator'>/</span>
-                    <span class='breadcrumbs-current'>Контакты</span>
-                </nav>
+    <!-- Основной контент -->
+    <main>
+        <!-- Хлебные крошки -->
+        <section class='breadcrumbs'>
+            <div class="container">
+                <a href="index.html">Главная</a>
+                <span class='breadcrumbs-separator'>/</span>
+                <span class='breadcrumbs-current'>Контакты</span>
+            </div>
 
-                <!-- Заголовок страницы -->
-                <h1>Контакты</h1>
+        </section>
 
-                <!-- Основной контент контактов -->
-                <section class='contacts-section'>
-                    <div class='contact-info'>
-                        <div class='contact-item'>
-                            <strong>Телефон:</strong>
-                            <a href="tel:+70000000000">+7 (000) 000-00-00</a>
-                            <div class='social-links'>
-                                <a href="https://wa.me/?text=megagroup" aria-label="WhatsApp">
-                                    <img src="/thumb/2/0w9ukS6XeL1gLc27K6PbGA/64r64/d/fgs16_whatsapp_rounded.svg" alt="WhatsApp" width="32" height="32">
-                                </a>
-                                <a href="https://t.me/megagroup" aria-label="Telegram">
-                                    <img src="/thumb/2/X7KVlxmYDgPm21_D-kHsFA/64r64/d/fgs16_telegram_rounded.svg" alt="Telegram" width="32" height="32">
-                                </a>
-                            </div>
-                        </div>
+        <!-- Заголовок страницы -->
+        <h1 class="contacts-h1">Адрес</h1>
+        <!--                    TODO: Предложи марату оставить всё в футере и главным контентом страницы просто сделать карту-->
+        <!-- Основной контент контактов -->
+        <section class='contacts-section contacts-section-container'>
+            <div class='contact-info'>
+                <div class='contact-item'>
+                    <div>
+                        <a href="https://yandex.ru/maps/43/kazan/?mode=search&text=г.Казань%2C%20пр.Ф.Амирхана%20дом%208Б%2C%20оф.1"
+                           target="_blank"
+                           style="display: block; padding: 15px; background: #f5f5f5; border-radius: 5px; text-decoration: none; color: #333; text-align: center">
+                            📍 г.Казань, пр.Ф.Амирхана дом 8Б, оф.1<br>
+                            <small style="color: #666;">(нажмите для просмотра на Яндекс.Картах)</small>
+                        </a>
 
-                        <div class='contact-item'>
-                            <strong>График работы:</strong>
-                            <div>Пн—Пт с 9:00 до 18:00</div>
-                            <div>Суббота с 10:00 до 17:00</div>
-                            <div>Воскресенье - Выходной</div>
-                        </div>
-
-                        <div class='contact-item'>
-                            <strong>Адрес:</strong>
-                            <div>г. Москва, Ленинский проспект, дом, строение, номер кабинета</div>
-                        </div>
-
-                        <div class='contact-item'>
-                            <strong>Email:</strong>
-                            <a href="mailto:mail@company.ru">mail@company.ru</a>
-                        </div>
-
-                        <div class='contact-item'>
-                            <strong>Реквизиты:</strong>
-                            <div>ИНН 000000000 ОГРН 000000000</div>
-                        </div>
-
-                        <div class='social-links'>
-                            <a href="https://vk.com/" aria-label="ВКонтакте">
-                                <img src="/thumb/2/0r7eREJKALEjWRApx4rKxQ/52r/d/fgs16_vk-cl-bg.svg" alt="ВКонтакте" width="32" height="32">
-                            </a>
-                            <a href="https://ok.ru/" aria-label="Одноклассники">
-                                <img src="/thumb/2/tCJmO1rRCz47XRVZw1iluA/52r/d/fgs16_ok-cl-bg.svg" alt="Одноклассники" width="32" height="32">
-                            </a>
-                            <a href="https://rutube.ru/" aria-label="Rutube">
-                                <img src="/thumb/2/r_XZX6rcaqBsJSzV4o8ovw/52r/d/fgs16_rutube-cl-bg.svg" alt="Rutube" width="32" height="32">
-                            </a>
-                        </div>
+                        <!-- Статическое изображение карты -->
+                        <img src="https://static-maps.yandex.ru/1.x/?ll=49.066081,55.830431&z=16&size=600,400&l=map&pt=49.066081,55.830431,pm2rdm"
+                             alt="Карта: г.Казань, пр.Ф.Амирхана дом 8Б, оф.1"
+                             style="width: 100%; height: auto; margin-top: 10px; border: 1px solid #ddd; border-radius: 5px;">
                     </div>
+                </div>
+        </section>
+    </main>
 
-                    <!-- Карта -->
-                    <div class='map-container'>
-                        <div class='map-placeholder'>
-                            Карта: г. Москва, Ленинский проспект<br>
-                            (Координаты: 55.75996919674171, 37.62150742612777)
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <!-- Подвал сайта -->
+    <!-- Подвал сайта -->
     <footer>
         <div class="container">
             <h2 class="fade-in contact-info-section-head">Контакты</h2>
@@ -164,7 +127,7 @@
             <p>Copyright &copy; 2024 - 2025 Название компании</p>
         </div>
     </footer>
-        </div>
+</div>
 
 <script type="module" src="js/main.js"></script>
 </body>

@@ -560,6 +560,9 @@ label {
     padding-bottom: 15px;
     border-bottom: 1px solid #f0f0f0;
 }
+.contacts-section-container{
+    display: block;
+}
 
 .contact-item:last-child {
     border-bottom: none;
@@ -827,14 +830,6 @@ footer a:hover {
 
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
-}
-
-.policy-content {
-    background: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    margin-top: 30px;
 }
 
 .policy-content h2 {
@@ -1989,4 +1984,15 @@ footer a:hover {
 }
 .page-content-agreement{
     margin-bottom: 40px;
+}
+.package-content-inner{
+    margin-top: 30px;
+}
+.contact-item{
+    width: 70%;
+    margin: 0 auto;
+}
+.contacts-h1{
+    margin: 0;
+    padding: 0;
 }
