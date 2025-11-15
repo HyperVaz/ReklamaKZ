@@ -1986,3 +1986,14 @@ footer a:hover {
     padding-bottom: 0;
     margin: 15px 0 15px 0;
 }
+.breadcrumbs{
+    margin: 0;
+    text-align: left;
+}
+.page-title-about, .page-title-about-h1, .page-content-about {
+    padding: 0;
+    margin: 0;
+}
+.page-content-about{
+    font-size: 19px
+}
